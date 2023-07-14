@@ -3,6 +3,7 @@ import 'package:toktok/pages/addPostScreen/camera_screen.dart';
 import 'package:toktok/pages/authScreen/forget_screen.dart';
 import 'package:toktok/pages/authScreen/signInscreen.dart';
 import 'package:toktok/pages/authScreen/signup_screen.dart';
+import 'package:toktok/pages/chatScreen/chat_list_screen.dart';
 import 'package:toktok/pages/chatScreen/chatdetails_screen.dart';
 import 'package:toktok/pages/homeScreen/live_screen.dart';
 import 'package:toktok/pages/landingScreen/landing_screen.dart';
@@ -103,6 +104,12 @@ class AppRoutes {
         GetPage(
           name: RouteName.kHashtagsScreen,
           page: () => const HashtagsScreen(),
+          transitionDuration: const Duration(milliseconds: 250),
+          transition: Transition.rightToLeftWithFade,
+        ),
+        GetPage(
+          name: RouteName.kChatListScreen,
+          page: () => const ChatListScreen(),
           transitionDuration: const Duration(milliseconds: 250),
           transition: Transition.rightToLeftWithFade,
         ),

@@ -68,36 +68,17 @@ class _SignInScreenState extends State<SignInScreen> {
             SizedBox(
               height: 15.h,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                PrimaryButton(
-                    elevation: 0,
-                    onTap: () {
-                      Get.toNamed(RouteName.kSignUpScreen);
-                    },
-                    text: 'Sign up',
-                    borderRadius: 6,
-                    width: 148.w,
-                    height: 44.h,
-                    textColor: AppColors.backgroundColor,
-                    bgColor: AppColors.lightBlackColor),
-                SizedBox(
-                  width: 12.h,
-                ),
-                PrimaryButton(
-                    elevation: 0,
-                    onTap: () {
-                      Get.offNamed(RouteName.kLandingScreen);
-                    },
-                    text: 'Sign in',
-                    borderRadius: 6,
-                    width: 148.w,
-                    height: 44.h,
-                    textColor: AppColors.backgroundColor,
-                    bgColor: AppColors.primaryColor)
-              ],
-            ),
+            PrimaryButton(
+                elevation: 0,
+                onTap: () {
+                  Get.offNamed(RouteName.kLandingScreen);
+                },
+                text: 'Sign in',
+                borderRadius: 6,
+                width: 311.w,
+                height: 44.h,
+                textColor: AppColors.backgroundColor,
+                bgColor: AppColors.primaryColor),
             SizedBox(
               height: 20.h,
             ),
@@ -156,10 +137,10 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             const Spacer(),
             CustomRichText(
-              title: 'Have’nt Account? ',
+              title: "Don't have an account? ",
               subtitle: 'Sign Up',
               onTab: () {
-                Get.offNamed(RouteName.kSignUpScreen);
+                Get.toNamed(RouteName.kSignUpScreen);
               },
               subtitleTextStyle: appTextStyle.titleMedium!.copyWith(
                   color: AppColors.primaryColor,

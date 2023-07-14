@@ -55,7 +55,7 @@ class _ForgetScreenState extends State<ForgetScreen> {
                 ),
                 SizedBox(height: 15.h),
                 Text(
-                  'Enter will get a code via SMS. Operator rates may apply.',
+                  'You will get a code via SMS. Operator rates may apply.',
                   style: appTextStyle.titleMedium!.copyWith(
                       color: AppColors.lightBlackColor,
                       fontWeight: FontWeight.w200,
@@ -82,11 +82,12 @@ class _ForgetScreenState extends State<ForgetScreen> {
               textColor: AppColors.backgroundColor,
               bgColor: AppColors.primaryColor),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 34.w, vertical: 20.h)
+                .copyWith(left: 20.w),
             child: const TermsAndPrivacyText(
               title1: '  By signing up you agree to our',
-              title2: ' Terms ',
-              title3: '  and',
+              title2: ' Terms',
+              title3: ' and',
               title4: ' Conditions of Use',
             ),
           ),

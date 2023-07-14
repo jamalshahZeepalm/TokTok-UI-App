@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:toktok/general_widgets/animation/grid_animation.dart';
 import 'package:toktok/models/search_model.dart';
@@ -56,9 +57,9 @@ class HashtagsScreen extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ),
-            GridAnimator(
-              time: Duration(milliseconds: 900),
+            AnimationLimiter(
               child: GridView.builder(
+                padding: EdgeInsets.only(left: 10.w, right: 10.w),
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
@@ -68,9 +69,20 @@ class HashtagsScreen extends StatelessWidget {
                     crossAxisSpacing: 7.5,
                     mainAxisSpacing: 7.5),
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: Image.asset(hashDetailList[index].toString()),
+                  return AnimationConfiguration.staggeredGrid(
+                    position: index,
+                    duration: const Duration(milliseconds: 600),
+                    columnCount: 3,
+                    child: SlideAnimation(
+                      verticalOffset: 80.0,
+                      child: FadeInAnimation(
+                        curve: Curves.slowMiddle,
+                        child: Padding(
+                          padding: const EdgeInsets.all(1.0),
+                          child: Image.asset(hashDetailList[index].toString()),
+                        ),
+                      ),
+                    ),
                   );
                 },
               ),

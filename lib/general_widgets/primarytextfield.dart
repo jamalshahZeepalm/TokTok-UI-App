@@ -68,7 +68,7 @@ class PrimaryTextFormField extends StatelessWidget {
         ),
         decoration: InputDecoration(
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+              EdgeInsets.symmetric(horizontal: 20.w, vertical: 13.h),
           fillColor: Colors.transparent,
           hintText: hintText,
           hintStyle: appTextStyle.labelSmall,

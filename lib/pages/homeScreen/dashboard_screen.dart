@@ -29,12 +29,15 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             style: appTextStyle.displaySmall!.copyWith(fontSize: 30.sp),
           ),
         ),
+        SizedBox(
+          height: 16.h,
+        ),
         Expanded(
           child: AnimationLimiter(
             child: ListView.separated(
               shrinkWrap: true,
-              physics: const BouncingScrollPhysics(
-                  decelerationRate: ScrollDecelerationRate.fast),
+              padding: EdgeInsets.zero,
+              physics: const BouncingScrollPhysics(),
               itemCount: postList.length,
               itemBuilder: (context, index) {
                 PostModel postModel = postList[index];
@@ -114,7 +117,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               },
               separatorBuilder: (BuildContext context, int index) {
                 return SizedBox(
-                  height: 23.h,
+                  height: 12.h,
                 );
               },
             ),

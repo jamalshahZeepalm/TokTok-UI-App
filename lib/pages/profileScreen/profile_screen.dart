@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:toktok/models/post_model.dart';
 import 'package:toktok/models/user_model.dart';
+import 'package:toktok/pages/profileScreen/Widgets/status_infocard.dart';
 import 'package:toktok/res/app_assetsurl.dart';
 import 'package:toktok/res/app_colors.dart';
 import 'package:toktok/routes/route_name.dart';
@@ -105,11 +106,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             SizedBox(height: 16.h),
             SizedBox(
-              height: 600.h,
+              height: 390.h,
               child: MasonryGridView.builder(
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                padding: EdgeInsets.symmetric(horizontal: 20.w)
+                    .copyWith(bottom: 50.h),
                 crossAxisSpacing: 6,
                 mainAxisSpacing: 6,
                 itemCount: currentUserPostList.length,
@@ -170,43 +172,6 @@ class TopLevelAppBar extends StatelessWidget {
           IconButton(
             onPressed: onPressed,
             icon: SvgPicture.asset(iconData),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class StatusInfoCard extends StatelessWidget {
-  const StatusInfoCard({
-    super.key,
-    required this.title,
-    required this.value,
-    required this.onPressed,
-  });
-  final String title;
-  final String value;
-  final Function() onPressed;
-  @override
-  Widget build(BuildContext context) {
-    final TextTheme appTextStyle = Theme.of(context).textTheme;
-    return InkWell(
-      onTap: onPressed,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            value,
-            style: appTextStyle.headlineLarge!
-                .copyWith(color: AppColors.lightBlackColor, fontSize: 15.sp),
-          ),
-          Text(
-            title,
-            style: appTextStyle.titleMedium!.copyWith(
-              color: AppColors.lightTinyGreyColor,
-              fontSize: 14.sp,
-            ),
           ),
         ],
       ),

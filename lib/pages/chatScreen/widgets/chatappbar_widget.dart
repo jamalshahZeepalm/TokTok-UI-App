@@ -7,13 +7,13 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final IconData rightIcon;
   final Function()? onRightIconPress;
-  final IconData? leftIcon;
+
   const ChatAppBar({
     Key? key,
     required this.rightIcon,
     required this.title,
     this.onRightIconPress,
-    this.leftIcon,
+  
   }) : super(key: key);
 
   @override
@@ -31,18 +31,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: AppColors.lightBlackColor,
           )),
       centerTitle: true,
-      leading: Padding(
-        padding: EdgeInsets.only(left: 25.w),
-        child: IconButton(
-          padding: EdgeInsets.zero,
-          icon: Icon(
-            leftIcon,
-
-            // color: CustomColors.kAppBarIconColor,
-          ),
-          onPressed: () {},
-        ),
-      ),
+    
       actions: [
         Padding(
           padding: EdgeInsets.only(right: 7.w),

@@ -7,6 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:toktok/res/app_colors.dart';
 import 'package:toktok/res/app_icons.dart';
+import 'package:toktok/routes/route_name.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -21,52 +22,56 @@ class NotificationScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(),
-            Row(
-              children: [
-                Text('All activity',
-                    style: appTextStyle.labelMedium!.copyWith(
-                      color: AppColors.lightBlackColor,
-                    )),
-                SizedBox(
-                  width: 6.w,
-                ),
-                SvgPicture.asset(AppIcons.kPolygon),
-              ],
+            Text('All activity',
+                style: appTextStyle.labelMedium!.copyWith(
+                  color: AppColors.lightBlackColor,
+                )),
+            SizedBox(
+              width: 20.w,
             ),
-            GestureDetector(
-                onTap: () {
-                  // Get.to(() => const MessagesScreen());
-                },
-                child: SvgPicture.asset(AppIcons.kBlackMessageIcon))
+            SvgPicture.asset(AppIcons.kPolygon),
           ],
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0).copyWith(right: 20.w),
+            child: GestureDetector(
+                onTap: () {
+                  Get.toNamed(RouteName.kChatListScreen);
+                },
+                child: SvgPicture.asset(AppIcons.kBlackMessageIcon)),
+          )
+        ],
       ),
       body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(AppIcons.kActivtyBlackMessgeOcon),
+            Center(child: SvgPicture.asset(AppIcons.kActivtyBlackMessgeOcon)),
             SizedBox(
               height: 8.h,
             ),
-            Text(
-              'Notifications aren’t available',
-              style: appTextStyle.headlineMedium!.copyWith(
-                fontSize: 18.sp,
-                color: AppColors.lightBlackColor,
-                fontWeight: FontWeight.w600,
+            Center(
+              child: Text(
+                'Notifications aren’t available',
+                style: appTextStyle.headlineMedium!.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.lightBlackColor,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Notifications about your account will appear here',
-                style: appTextStyle.bodySmall!.copyWith(
-                  fontSize: 14.sp,
-                  color: AppColors.grey40Color,
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Notifications about your account will appear here',
+                  style: appTextStyle.bodySmall!.copyWith(
+                    fontSize: 14.sp,
+                    color: AppColors.grey40Color,
+                  ),
                 ),
               ),
             )

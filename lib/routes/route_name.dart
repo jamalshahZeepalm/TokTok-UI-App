@@ -14,4 +14,5 @@ class RouteName {
   static String kChatDetailsScreen = '/ChatDetailsScreen';
   static String kConfirmationsScreen = '/ConfirmationsScreen';
   static String kHashtagsScreen = '/HashtagsScreen';
+  static String kChatListScreen = '/ChatListScreen';
 }

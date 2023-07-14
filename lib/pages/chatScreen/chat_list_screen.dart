@@ -14,13 +14,13 @@ class ChatListScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: ChatAppBar(
-        leftIcon: Icons.arrow_back_ios_new,
         title: 'Chats',
         rightIcon: Icons.search,
         onRightIconPress: () {},
       ),
       body: AnimationLimiter(
         child: ListView.separated(
+          padding: EdgeInsets.zero,
           itemCount: chatList.length,
           itemBuilder: (context, index) {
             return AnimationConfiguration.staggeredList(

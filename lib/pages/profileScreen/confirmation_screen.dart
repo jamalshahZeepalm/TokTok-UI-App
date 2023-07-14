@@ -26,16 +26,6 @@ class ConfirmationsScreen extends StatelessWidget {
             style: appTextStyle.labelMedium!.copyWith(
               color: AppColors.lightBlackColor,
             )),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-                onTap: () {
-                  Get.back();
-                },
-                child: Icon(Icons.close)),
-          )
-        ],
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(

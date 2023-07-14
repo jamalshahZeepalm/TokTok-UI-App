@@ -25,14 +25,12 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          iconTheme: const IconThemeData(color: Colors.black),
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text('Search',
               style: appTextStyle.labelMedium!.copyWith(
                 color: AppColors.lightBlackColor,
               )),
-          leading: const Icon(Icons.arrow_back),
         ),
         body: GetBuilder<SearchesController>(
           init: SearchesController(),
